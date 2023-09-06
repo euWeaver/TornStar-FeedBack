@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TornStar Feedback</title>
+    <style>
+        body {
+            background-color: #232323;
+            font-family: Arial, sans-serif;
+            color: #EFEFEF; /* This will set the default color, which is mostly for the labels */
+        }
+
+        textarea, input[type="number"], select {
+            background-color: #2E2E2E;
+            border: 2px solid #D7BE69;
+            padding: 8px 10px;
+            color: #EBE9D8;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .form-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #D7BE69;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+        textarea::placeholder, input[type="number"]::placeholder {
+            color: #EBE9D8;
+            opacity: 0.7;
+        }
+
+        input[type="submit"] {
+            background-color: #D7BE69;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #BAA458; /* Slightly darker shade for hover effect */
+        }
+.form-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #D7BE69;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+}
+
+textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #D7BE69;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #D7BE69;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #BAA458;
+}
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* New Styles */
+.parent-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 10px;  /* Adjust the spacing as needed */
+}
+    </style>
+</head>
+<body>
+    <div class="parent-container">
+        <h1>TornStar Feedback</h1>
+    </div>
+    
+
+    <div class="form-container">
+    <form id="form" action="https://docs.google.com/forms/d/e/1FAIpQLSfHBAZ6KWA26JIPaPN86N3AWg3rnnq5MCylA-oQrF5t_jNgSQ/formResponse" method="POST">
+        
+        <label for="experienceRating">How would you rate your experience in our studio?</label>
+        <select name="entry.882785522" id="experienceRating"
+        required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <textarea name="entry.1881108442" id="com1" placeholder="Please provide more details about your rating" ></textarea>
+
+        <label for="communicationRating">How would you rate communication with our staff and tattoo artists?</label>
+        <select name="entry.559724154" id="communicationRating" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <textarea name="entry.340941827" id="com2" placeholder="Please provide more details about your rating" ></textarea>
+
+        <label for="priceQualityRating">How do you assess the price to quality ratio of our services?</label>
+        <select name="entry.1200453784" id="priceQualityRating" required> 
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <textarea name="entry.75672810" id="com3" placeholder="Please provide more details about your rating" ></textarea>
+
+        <label for="convenience">Was it convenient for you to get to our studio?</label>
+        <select name="entry.485962240" id="convenience" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <textarea name="entry.1702757472" id="com4" placeholder="If no, why?"></textarea>
+
+        <label for="musicFeedback">Did you like the music during the session, or what would you change or suggest?</label>
+        <textarea name="entry.39434209" id="musicFeedback" required></textarea>
+
+        <label for="serviceSuggestions">Do you have any suggestions for improvement/adding new services that we could provide in the studio?</label>
+        <textarea name="entry.1700509319" id="serviceSuggestions" required></textarea>
+
+        <label for="memorableAspect">What do you remember most about our studio?</label>
+        <textarea name="entry.1793879617" id="memorableAspect" required></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<script>
+    let url = "https://docs.google.com/forms/d/e/1FAIpQLSfHBAZ6KWA26JIPaPN86N3AWg3rnnq5MCylA-oQrF5t_jNgSQ/formResponse"; //action url
+let form = document.querySelector("#form"); //form element
+
+form.addEventListener("submit", (e)=>{
+    e.preventDefault();//prevent default behaviour
+
+    fetch(url,{
+        method: "POST",
+        mode: "no-cors",
+        header:{
+            'Content-Type': 'application/json'
+            },
+        body: getInputData()
+    })
+    .then(data=>{
+        console.log(data);
+        window.location.href = "submitted.html";
+    })
+    .catch(err=>console.error(err)); //promise based
+});
+
+//populating input data
+function getInputData(){
+    let dataToPost = new FormData(); //formdata API
+
+    //fill name attributes to corresponding values
+    dataToPost.append("entry.882785522", document.querySelector("#experienceRating").value);
+    dataToPost.append("entry.1881108442", document.querySelector("#com1").value);
+    dataToPost.append("entry.559724154", document.querySelector("#communicationRating").value);
+    dataToPost.append("entry.340941827", document.querySelector("#com2").value);
+    dataToPost.append("entry.1200453784", document.querySelector("#priceQualityRating").value);
+    dataToPost.append("entry.75672810", document.querySelector("#com3").value);
+    dataToPost.append("entry.485962240", document.querySelector("#convenience").value);
+    dataToPost.append("entry.1702757472", document.querySelector("#com4").value);
+    dataToPost.append("entry.39434209", document.querySelector("#musicFeedback").value);
+    dataToPost.append("entry.1700509319", document.querySelector("#serviceSuggestions").value);
+    dataToPost.append("entry.1793879617", document.querySelector("#memorableAspect").value);
+    return dataToPost;
+}
+</script>
+</body>
+</html>
+
