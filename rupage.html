@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TornStar Feedback</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+    
+            body {
+                background-image: url('img1.jpg'); /* Set your background image */
+                background-size: cover;
+                background-position: center;
+                background-blend-mode: overlay;
+                background-color: rgba(0, 0, 0, 0.5); /* Darken the image */
+                font-family: 'Montserrat';
+                color: #EFEFEF; /* This will set the default color, which is mostly for the labels */
+            }
+            body::before {
+        content: "";
+        display: block;
+        position: fixed; /* Full-screen */
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+        pointer-events: none; /* Allows interactions with elements underneath */
+        z-index: -1; /* Makes sure the overlay is behind the content */
+    }
+    
+            textarea, input[type="number"], select {
+                background-color: rgba(46, 46, 46, 0.8);
+                border: 2px solid #C9A869;
+                padding: 8px 10px;
+                color: #EBE9D8;
+                width: 100%;
+                box-sizing: border-box;
+                margin-bottom: 10px;
+                border-radius: 20px;
+                font-family: 'Montserrat';
+            }
+    
+    
+            textarea::placeholder, input[type="number"]::placeholder {
+                color: #EBE9D8;
+                opacity: 0.7;
+                font-family: 'Montserrat';
+    
+            }
+    .form-container {
+        background-color: rgba(46, 46, 46, 0.6);
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 2px solid #C9A869;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 20px; 
+    }
+    
+    input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        margin-bottom: 10px;
+        background-color: #f5f5f5;
+        border-radius: 20px;
+        font-family: 'Montserrat';
+    }
+    
+    textarea, select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #C9A869;
+        border-radius: 10px;
+        font-family: 'Montserrat';
+    }
+    
+    input[type="submit"] {
+        display: block;
+        margin: 20px auto;
+        background-color: rgba(46, 46, 46, 0.8);
+        color: #ffffff;
+        padding: 10px 80px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 
+          0 0 10px rgb(255, 255, 255, 0.3), 
+          0 0 11px rgba(255, 255, 100, 0.5), 
+          inset 0 0 10px rgb(255, 255, 255),  
+          inset 0 0 11px rgba(255, 255, 100, 0.5);
+          font-family: 'Montserrat';
+    }
+    
+    input[type="submit"]:hover {
+        display: block;
+        margin: 20px auto;
+        background-color: rgba(46, 46, 46, 0.8);
+        transform: scale(1.05);
+        box-shadow: 
+          0 0 10px rgb(255, 255, 255, 0.3), 
+          0 0 12px rgba(255, 255, 100, 0.5),  
+          inset 0 0 10px rgb(255, 255, 255),  
+          inset 0 0 11px rgba(255, 255, 100, 0.5);
+          font-family: 'Montserrat';
+    }
+            label {
+                display: block;
+                margin-bottom: 5px;
+                border-radius: 10px;
+            }
+    
+            /* New Styles */
+    .parent-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+    }
+    
+    h1 {
+        margin-bottom: 10px;
+    
+    }
+    .img {
+                display: flex;
+                justify-content: center;
+                padding-top: 10px;
+            }
+    
+            .img img {
+                width: 50%; /* Reduce the width to make logo smaller */
+                max-width: 300px; /* Adjust based on your preferred maximum width */
+            }
+            .language-switcher {
+        position: relative;
+        display: inline-block;
+    
+    }
+    
+    #currentLang {
+        background-color: rgba(46, 46, 46, 0.6);
+        color: white;
+        padding: 8px 16px;
+        font-size: 16px;
+        border: 2px solid #C9A869;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+    
+    #currentLang img, #langDropdown img {
+        width: 80px;
+        height: auto;
+     
+      
+    }
+    
+    #langDropdown {
+        display: none;
+        position: absolute;
+        background-color: rgba(46, 46, 46, 0.6);
+        min-width: 16px;
+        border: 2px solid #C9A869;
+        border-radius: 10px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.66);
+        z-index: 1;
+    
+        margin-left: 15px;
+       
+    }
+    
+    #langDropdown a {
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+        display: block;
+        
+      
+    }
+    
+    #langDropdown a:hover {
+        background-color: rgba(46, 46, 46, 0.6);
+        border: 2px solid #C9A869;
+        border-radius: 10px;
+        
+       
+    }
+        </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <!-- Current language button (default is English) -->
+        <button id="currentLang" onclick="toggleDropdown()">
+            <span class="flag-icon flag-icon-ru"></span>
+        </button>
+        <!-- Dropdown menu -->
+        <div id="langDropdown" class="dropdown-content">
+            <a href="rupage.html"><span class="flag-icon flag-icon-ru"></span></a>
+            <a href="espage.html"><span class="flag-icon flag-icon-ee"></span></a>
+            <a href="index.html"><span class="flag-icon flag-icon-gb"></span></a>
+        </div>
+    </div>
+    <div class="img"><img src="IMG_2096.PNG" alt="TORNSTAR"></div>
+    <div class="parent-container">
+        <h1>Анонимный опрос клиентов</h1>
+        <h1> Расскажите, как мы можем сделать вас счастливее!</h1>
+    </div>
+    
+
+    <div class="form-container">
+    <form id="form" action="https://docs.google.com/forms/d/e/1FAIpQLSfHBAZ6KWA26JIPaPN86N3AWg3rnnq5MCylA-oQrF5t_jNgSQ/formResponse" method="POST">
+        
+        <label for="experienceRating">Как бы ты оценил свой опыт в нашей студии? ((Выберите от 1 до 10)</label>
+        <select name="entry.882785522" id="experienceRating"
+        required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <textarea name="entry.1881108442" id="com1" placeholder="Не очень удобно сидеть в туалете" ></textarea>
+
+        <label for="communicationRating">Как бы ты оценил общение с персоналом и татуировщиками? (Выберите от 1 до 10)</label>
+        <select name="entry.559724154" id="communicationRating" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <textarea name="entry.340941827" id="com2" placeholder="Они тебя бьют? Я никому из них не скажу" ></textarea>
+
+        <label for="priceQualityRating">Как ты оцениваешь соотношение цены и качества наших услуг? (Выберите от 1 до 10)</label>
+        <select name="entry.1200453784" id="priceQualityRating" required> 
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <textarea name="entry.75672810" id="com3" placeholder="Суперсладкие конфеты стоят того" ></textarea>
+
+        <label for="convenience">Порекомендовали бы ты нас своим друзьям?</label>
+        <select name="entry.485962240" id="convenience" required>
+            <option value="Yes">Да</option>
+            <option value="No">Нет</option>
+        </select>
+        <textarea name="entry.1702757472" id="com4" placeholder="Если били так и скажи"></textarea>
+
+        <label for="musicFeedback">Понравилась ли тебе музыка во время сеанса, или что бы ты изменил или предложил?</label>
+        <textarea name="entry.39434209" id="musicFeedback" placeholder="Мне нравится Киркоров, играйте его чаще"></textarea>
+
+        <label for="serviceSuggestions">Есть ли у тебя предложения по улучшению/добавлению новых услуг, которые мы могли бы предоставлять в студии клиентам?</label>
+        <textarea name="entry.1700509319" id="serviceSuggestions" placeholder="Мне нравится массаж, это была бы отличная идея"></textarea>
+
+        <label for="memorableAspect">Что запомнилось больше всего?</label>
+        <textarea name="entry.1793879617" id="memorableAspect" placeholder="Холодилник с РедБуллом"></textarea>
+
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+<script>
+    let url = "https://docs.google.com/forms/d/e/1FAIpQLSfHBAZ6KWA26JIPaPN86N3AWg3rnnq5MCylA-oQrF5t_jNgSQ/formResponse"; //action url
+let form = document.querySelector("#form"); //form element
+
+form.addEventListener("submit", (e)=>{
+    e.preventDefault();//prevent default behaviour
+
+    fetch(url,{
+        method: "POST",
+        mode: "no-cors",
+        header:{
+            'Content-Type': 'application/json'
+            },
+        body: getInputData()
+    })
+    .then(data=>{
+        console.log(data);
+        window.location.href = "russubmitted.html";
+    })
+    .catch(err=>console.error(err)); //promise based
+});
+
+//populating input data
+function getInputData(){
+    let dataToPost = new FormData(); //formdata API
+
+    //fill name attributes to corresponding values
+    dataToPost.append("entry.882785522", document.querySelector("#experienceRating").value);
+    dataToPost.append("entry.1881108442", document.querySelector("#com1").value);
+    dataToPost.append("entry.559724154", document.querySelector("#communicationRating").value);
+    dataToPost.append("entry.340941827", document.querySelector("#com2").value);
+    dataToPost.append("entry.1200453784", document.querySelector("#priceQualityRating").value);
+    dataToPost.append("entry.75672810", document.querySelector("#com3").value);
+    dataToPost.append("entry.485962240", document.querySelector("#convenience").value);
+    dataToPost.append("entry.1702757472", document.querySelector("#com4").value);
+    dataToPost.append("entry.39434209", document.querySelector("#musicFeedback").value);
+    dataToPost.append("entry.1700509319", document.querySelector("#serviceSuggestions").value);
+    dataToPost.append("entry.1793879617", document.querySelector("#memorableAspect").value);
+    return dataToPost;
+}
+function toggleDropdown() {
+    var dropdown = document.getElementById("langDropdown");
+    if (dropdown.style.display === "none") {
+        dropdown.style.display = "block";
+    } else {
+        dropdown.style.display = "none";
+    }
+}
+
+</script>
+</body>
+</html>
+

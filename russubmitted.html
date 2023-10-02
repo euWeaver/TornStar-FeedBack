@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Reset */
+        body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, form, input, textarea {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('img1.JPG') no-repeat center center fixed;
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.5); /* Darken the image */
+            font-family: 'Montserrat';
+            color: #EFEFEF;
+        }
+        body::before {
+    content: "";
+    display: block;
+    position: fixed; /* Full-screen */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+    pointer-events: none; /* Allows interactions with elements underneath */
+    z-index: -1; /* Makes sure the overlay is behind the content */
+}
+        .center-container {
+            max-width: 600px;
+             
+            padding: 20px;
+            border: 2px solid #C9A869;
+            background-color: rgba(46, 46, 46, 0.8);
+            color: white;
+            text-align: center;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Relative positioning for logo */
+            border-radius: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #C9A869;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+        .logo1 {
+            width: 420px; /* Adjust width as needed */
+            position: absolute; 
+            top: -260px; /* Half of the logo's height to position it centered above the container */
+            left: 50%;
+            transform: translateX(-50%); /* Center logo */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center-container">
+        <img src="logo2.svg" alt="Logo" class="logo1"> 
+        <h2>Ваши отзывы — наш главный источник вдохновения</h2>
+        <p>Большое спасибо!</p>
+    </div>
+</body>
+
+</html>
